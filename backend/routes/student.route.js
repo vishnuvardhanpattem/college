@@ -7,4 +7,6 @@ router.post("/studentregistration",studentregistration);
 
 router.post("/studentdetailsverification",student_details_verification);
 
+router.post("/getstudentdetails",getstudentdetails);
+
 export default router;
