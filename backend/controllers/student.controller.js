@@ -107,7 +107,6 @@ export const student_details_verification=async()=>{
     }
 }
 
-
 export const getstudentdetails=async(req,res)=>{
     const {adharnumber }=req.body;
     try {
