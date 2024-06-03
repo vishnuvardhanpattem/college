@@ -23,7 +23,7 @@ const TeacherSignup = () => {
     }
   }  
   return (
-    <div>
+    <div className='container mt-5 w-50 '>
         <form>
             {error?<p className='text-danger'>{error}</p>:""}
             <div class="form-group">
@@ -39,7 +39,7 @@ const TeacherSignup = () => {
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}}/>
             </div>
-            <button class="btn btn-primary" onClick={handleSubmit}>Submit</button>
+            <button class="btn btn-primary my-3" onClick={handleSubmit}>Submit</button>
             <p>Already have an account? <Link to="/teacherlogin">Sign In</Link></p>
         </form>
     </div>

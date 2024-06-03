@@ -36,7 +36,7 @@ const OfficeUseOnly = () => {
                 </select>
             </div>
             <div className="mb-3">
-                <label className="form-label">College Allotment Status: (esxample: Processing) </label>
+                <label className="form-label">College Allotment Status: (example: Processing) </label>
 
             </div>
         </div>

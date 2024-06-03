@@ -106,3 +106,23 @@ export const student_details_verification=async()=>{
         return  res.status(404).json({error:"Internal Server error"});
     }
 }
+
+
+export const getstudentdetails=async(req,res)=>{
+    const {adharnumber }=req.body;
+    try {
+        const student=await Student.findOne({adharnumber});
+        if(!student){
+            return res.status(400).json({error:"Student not found"});
+        }
+        const id=student._id.toString();
+        const ContactDetails=await Contact.findOne({student:id});
+        const DocumentDetails=await Document.findOne({student:id});
+        const AddressDetails=await Address.findOne({student:id});
+        const OtherDetails=await Other.findOne({student:id});
+        const GroupDetails=await Group.findOne({student:id})
+        return res.status(200).json({student,ContactDetails,DocumentDetails,AddressDetails,OtherDetails,GroupDetails});
+    } catch (error) {
+        return res.status(400).json({error:"Internal server error"});
+    }
+}
